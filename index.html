@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevConverter</title>
+    <!--css-->
+    <!--fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Poppins:ital,wght@0,500;0,700;1,600&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
-    
+    <header>
+        <h1>$DevConverter</h1>
+    </header>
+    <main>
+        <form id="form">
+            <section class="inputs-container">
+                <div class="for-group">
+                    <label for="value-real">Value to be converted</label>
+                    <input type="number" placeholder="20,00" id="value-real" name="value-real" max="1000000">
+                </div>
+                <div class="for-group">
+                    <label for="currency">Choose the currency</label>
+                    <select id="currency">
+                        <option value="">Selection</option>
+                        <option value="eur">Euro</option>
+                        <option value="dol">Dolar</option>
+                    </select>
+                </div>
+            </section>
+            <button type="submit">Convert</button>
+        </form>
+        <h2 id="result"></h2>
+    </main>
+    <footer>
+        <span>
+            &copy;$DevConverter, 2023. All rights reserved.
+        </span>
+    </footer>
+
 </body>
+
 </html>
