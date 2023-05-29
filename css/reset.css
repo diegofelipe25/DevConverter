@@ -25,5 +25,5 @@ input, select, button{
     transition: 0.2 ease-in-out;
 }
 input:focus, select:focus{
-    box-shadow: inset 1px 1px 3px black;
+    box-shadow: inset 1px 1px 3px rgb(21, 255, 0);
 }
