@@ -4,10 +4,9 @@ const selectedCurrency = document.getElementById('currency');
 const result = document.getElementById('result');
 form.addEventListener('submit', handleSubmit);
 let valueConverter = 0;
-
 function handleSubmit(e) {
     e.preventDefault();
-    if (!inputValue.value || inputValue.value < 0) {
+    if (!inputValue.value || inputValue.value <= 0) {
         alert('Informe o valor correto!');
         return;
     }
@@ -19,12 +18,19 @@ function handleSubmit(e) {
 function convert() {
     if (selectedCurrency.value == 'eur') {
         valueConverter = inputValue.value / 5.38;
+        result.innerHTML = valueFormatter('pt-BR', 'EUR');
     }
     else if (selectedCurrency.value == 'dol') {
         valueConverter = inputValue.value / 5.02;
+        result.innerHTML = valueFormatter('en-US', 'USD');
     }
+    
     result.innerHTML = valueConverter;
+    inputValue.value = '';
+    selectedCurrency.value = '';
 }
-function valueFormatter() {
+function valueFormatter(Locale, currency) {
+    const value = valueConverter.toLocaleString(`${Locale}`, { style: 'currency', currency: `${currency}` });
+    return `<span>✔</span> ${value} <span>✔</span>`
 
 }
