@@ -18,12 +18,14 @@ function convert() {
     if (selectedCurrency.value == 'eur') {
         valueConverter = inputValue.value / 5.38;
         result.innerHTML = valueFormatter('pt-BR', 'EUR');
-        animateResult();
+        playAudio();
+        setTimeout(animateResult(), 5000);
     }
     else if (selectedCurrency.value == 'dol') {
         valueConverter = inputValue.value / 5.02;
         result.innerHTML = valueFormatter('en-US', 'USD');
-        animateResult();
+        playAudio();
+        setTimeout(animateResult(), 5000);
     }
     result.innerHTML = valueConverter;
     inputValue.value = '';
@@ -31,11 +33,15 @@ function convert() {
 }
 function valueFormatter(Locale, currency) {
     const value = valueConverter.toLocaleString(`${Locale}`, { style: 'currency', currency: `${currency}` });
-    return `<span>✔</span> ${value} <span>✔</span>`;
+    return `<span>💲</span> ${value} <span>💲</span>`;
 }
 function animateResult() {
     return result.animate([
         { transform: 'translateY(-150px)' },
         { transform: 'translateX(0px)' },
     ], { duration: 500 });
+}
+function playAudio() {
+    let x = document.getElementById("myAudio");
+    x.play();
 }

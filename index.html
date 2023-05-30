@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/style.css">
+    <audio src="./som/dinheiro.mp3"></audio>
     <!--fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,8 +40,10 @@
                     </select>
                 </div>
             </section>
-            <button type="submit" onclick=
-            '$.playSound("https://sounds-mp3.com/mp3/0003928.mp3")'>Convert</button>
+            <button type="submit">Convert</button>
+            <audio id="myAudio">
+                <source src="./som/dinheiro.mp3" type="audio/mpeg">
+            </audio>
         </form>
         <h2 id="result"></h2>
     </main>
