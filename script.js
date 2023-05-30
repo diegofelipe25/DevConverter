@@ -8,28 +8,34 @@ function handleSubmit(e) {
     e.preventDefault();
     if (!inputValue.value || inputValue.value <= 0) {
         alert('Informe o valor correto!');
-        return;   }
+        return;
+    }
     else if (!selectedCurrency.value) {
         alert('Escolha uma moeda!');
-    }  convert();}
+    } convert();
+}
 function convert() {
     if (selectedCurrency.value == 'eur') {
         valueConverter = inputValue.value / 5.38;
-        result.innerHTML = valueFormatter('pt-BR', 'EUR'); 
-        animateResult();}
+        result.innerHTML = valueFormatter('pt-BR', 'EUR');
+        animateResult();
+    }
     else if (selectedCurrency.value == 'dol') {
         valueConverter = inputValue.value / 5.02;
-        result.innerHTML = valueFormatter('en-US', 'USD'); 
-        animateResult(); }
+        result.innerHTML = valueFormatter('en-US', 'USD');
+        animateResult();
+    }
     result.innerHTML = valueConverter;
     inputValue.value = '';
-    selectedCurrency.value = '';}
+    selectedCurrency.value = '';
+}
 function valueFormatter(Locale, currency) {
     const value = valueConverter.toLocaleString(`${Locale}`, { style: 'currency', currency: `${currency}` });
-    return `<span>✔</span> ${value} <span>✔</span>`;}
-function animateResult(){
+    return `<span>✔</span> ${value} <span>✔</span>`;
+}
+function animateResult() {
     return result.animate([
-        { transform: 'translateY(-150px)'},
-        { transform: 'translateX(0px)'},
-    ], {duration: 500});
+        { transform: 'translateY(-150px)' },
+        { transform: 'translateX(0px)' },
+    ], { duration: 500 });
 }
