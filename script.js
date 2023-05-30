@@ -39,7 +39,7 @@ function animateResult() {
     return result.animate([
         { transform: 'translateY(-150px)' },
         { transform: 'translateX(0px)' },
-    ], { duration: 500 });
+    ], { duration: 1500 });
 }
 function playAudio() {
     let x = document.getElementById("myAudio");
